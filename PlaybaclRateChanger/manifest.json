@@ -1,0 +1,23 @@
+{
+  "name": "Youtube PlayBackRate Changer",
+  "description" : "Extension for changing playBackRate of video form 0.1 to 16, press '[' to decrease and ']' to increase rate" ,
+  "version": "1.0",
+  "manifest_version": 2,
+  "permissions": ["activeTab","declarativeContent","storage","<all_urls>","tabs"],
+  "background": {
+    "scripts":["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["style.css"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "images/icon.png"
+  },
+  "icons": {
+    "48": "images/icon.png"
+  }
+}
